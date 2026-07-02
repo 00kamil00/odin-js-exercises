@@ -1,16 +1,23 @@
-const sumAll = function (min, max) {
-    if (!Number.isInteger(min) || !Number.isInteger(max)) return "ERROR";
-    if (min < 0 || max < 0) return "ERROR";
-    if (min > max) {
-    const temp = min;
-    min = max;
-    max = temp;
+const sumAll = function (numOne, numTwo) {
+    if (!Number.isInteger(numOne) || !Number.isInteger(numTwo) || numOne < 0 || numTwo < 0) {
+        return "ERROR"
     }
-    let sum = 0;
-    for (let i = min; i <= max; i++) {
-    sum += i;
+
+    if (numOne > numTwo) {
+        let temp = numOne
+        numOne = numTwo
+        numTwo = temp
     }
-    return sum;
+
+    let new_array = []
+    for (let i=numOne; i<=numTwo; i++) {
+        new_array.push(i)
+    }
+
+    let suma = 0
+    new_array.forEach(number => {suma += number})
+
+    return suma
 }
 
 // Do not edit below this line
